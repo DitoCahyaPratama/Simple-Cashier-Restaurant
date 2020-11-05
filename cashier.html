@@ -1,0 +1,126 @@
+<!-- 
+    Dito Cahya Pratama
+    TI-2G 
+-->
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta charset="UTF-8" />
+    <title>Resto - Bintang 5</title>
+    <link href="css/grid.css" rel="stylesheet" media="screen" />
+    <link href="css/stylesheet.css" rel="stylesheet" media="screen" />
+</head>
+
+<body>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <label class="logo">Resto</label>
+        <ul>
+            <li><a href="index.html">Logout</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-6">
+                <div id="control">
+
+                    <div class="col-12">
+                        <button id="reset">RESET</button>
+                        <div id="trash"> 
+                            <p>Drag ke sini untuk membatalkan</p>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div>Drag makanan ke sini</div>
+                        <div id="order"></div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-6">
+
+                <div id="item" class="col-12">
+                    <div class="row">
+                        <a class="prev">&#10094;</a>
+                         <a class="next">&#10095;</a>
+                     </div>
+                    <div class="slide"> 
+                        <div class="desc">Pizza - Rp 50.000</div>
+                        <img src="img/pizza.png" id="2"> 
+                    </div>
+                    <div class="slide"> 
+                        <div class="desc">Burger - Rp 10.000</div>
+                        <img src="img/burger.png" id="3"> 
+                    </div>
+                    <div class="slide"> 
+                        <div class="desc">Beef - Rp 20.000</div>
+                        <img src="img/beef.png" id="4"> 
+                    </div>
+                </div>
+
+                <div class="col-12"> 
+                    <div class="det">Detail Order</div>
+                    <div id="table-detail">
+                        <div class="row">
+                            <div class="col-4">
+                                ID client: 
+                            </div>
+                            <div class="col-8">
+                                <input type="text" id="idClient" disabled>
+                            </div>
+                        </div> 
+                        <div class="row">
+                            <div class="col-4">
+                                Name client: 
+                            </div>
+                            <div class="col-8">
+                                <input type="text" id="name" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                Status client: 
+                            </div>
+                            <div class="col-8">
+                                <input type="radio" name="status" value="member" required> Member
+                                <input type="radio" name="status" value="non-member" required> Non-member
+                            </div>
+                        </div>
+                        <table id="detail"></table>
+                    </div>
+                    <div><table id="total"></table></div>
+                    <div><table id="diskon"></table></div>
+                    <button id="process">ORDER</button> 
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+
+    </footer>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script src="js/item.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        $(document).ready(function(){
+            let id = "CL"+Math.floor((Math.random() * 100) + 1);
+            $('#idClient').val(id)
+        });
+    </script>
+</body>
+
+</html>
